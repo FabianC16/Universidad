@@ -1,0 +1,178 @@
+:root {
+    --bg-color: #0b0f19;
+    --card-bg: rgba(22, 27, 42, 0.94);
+    --primary-color: #00d2ff;
+    --secondary-color: #0066ff;
+    --text-main: #e2e8f0;
+    --text-dim: #cbd5e1;
+    --text-hover: #ffffff; /* Blanco puro para el hover */
+}
+
+body {
+    background-color: var(--bg-color);
+    /* --- NUEVA IMAGEN DE FONDO DE PANTALLA --- */
+    /* He elegido una imagen de un túnel de datos/luz futurista en tonos azules y cian */
+    background-image: linear-gradient(rgba(11, 15, 25, 0.8), rgba(11, 15, 25, 0.9)), 
+                    url('https://images.unsplash.com/photo-1581091215367-9b6c00b3035a?auto=format&fit=crop&q=80&w=1500');
+    /* ------------------------------------------- */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Efecto paralaje */
+    background-repeat: no-repeat;
+    color: var(--text-main);
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+header {
+    height: 250px;
+    background: rgba(11, 15, 25, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-bottom: 3px solid var(--secondary-color);
+}
+
+h1 { 
+    font-family: 'Orbitron', sans-serif; 
+    font-size: 2.8rem; 
+    margin: 0; 
+    color: #fff; 
+    text-shadow: 0 0 15px var(--secondary-color); 
+}
+
+.subtitle { 
+    font-size: 1rem; 
+    letter-spacing: 3px; 
+    color: var(--primary-color); 
+    margin-top: 5px; 
+    font-weight: 600;
+}
+
+.badge {
+    background: linear-gradient(135deg, #ff0055, #ffcc00);
+    color: #fff;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    margin-top: 15px;
+    display: inline-block;
+}
+
+.container { max-width: 900px; margin: -40px auto 50px; padding: 0 20px; }
+
+.card {
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.7);
+    margin-bottom: 30px;
+    border: 1px solid #2d3748;
+    backdrop-filter: blur(5px); /* Efecto de cristal esmerilado */
+}
+
+.section-title { 
+    font-family: 'Orbitron', sans-serif; 
+    color: var(--primary-color); 
+    border-bottom: 1px solid #2d3748; 
+    padding-bottom: 10px; 
+    margin-top: 0; 
+}
+
+.sub-label { 
+    font-family: 'Orbitron', sans-serif; 
+    font-size: 0.9rem; 
+    color: #fff; 
+    margin-bottom: 15px; 
+    opacity: 0.8; 
+    text-transform: uppercase;
+}
+
+.definition-box { 
+    background: rgba(0, 210, 255, 0.05); 
+    padding: 15px; 
+    border-radius: 8px; 
+    margin-bottom: 25px; 
+    border-left: 5px solid var(--primary-color); 
+}
+
+/* --- GRID INTERACTIVO --- */
+.interactive-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+
+.info-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid #2d3748;
+    border-radius: 10px;
+    transition: all 0.4s ease;
+}
+
+.card-header { padding: 15px; text-align: center; }
+.card-header h3 { margin: 0; font-size: 0.95rem; color: var(--primary-color); font-weight: 600; }
+
+.card-content {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    padding: 0 15px;
+    transition: all 0.5s ease;
+    font-size: 0.95rem;
+}
+
+.info-card:hover { 
+    border-color: var(--primary-color); 
+    background: rgba(0, 210, 255, 0.1); 
+    transform: translateY(-3px); 
+}
+
+.info-card:hover .card-content { 
+    max-height: 250px; 
+    opacity: 1; 
+    padding: 15px; 
+    color: var(--text-hover); 
+    font-weight: 600; /* Letra más destacada en hover */
+}
+
+/* --- CAPAS OSI --- */
+.osi-stack { display: flex; flex-direction: column; gap: 8px; }
+
+.layer {
+    background: rgba(0, 102, 255, 0.08);
+    border: 1px solid var(--secondary-color);
+    padding: 15px 20px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    margin-bottom: 8px;
+}
+
+.layer-title { display: flex; align-items: center; font-weight: 600; font-size: 1.05rem; }
+.layer-title span {
+    background: linear-gradient(135deg, #00d2ff 0%, #0066ff 100%);
+    width: 30px; height: 30px;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 50%; margin-right: 15px; font-family: 'Orbitron', sans-serif; font-size: 0.8rem;
+}
+
+.layer-detail { max-height: 0; opacity: 0; overflow: hidden; transition: all 0.4s ease; font-size: 0.9rem; color: var(--text-dim); }
+
+.layer:hover { background: var(--secondary-color); color: white; transform: scale(1.01); }
+.layer:hover .layer-detail { 
+    max-height: 100px; 
+    opacity: 1; 
+    margin-top: 10px; 
+    color: #fff; 
+    font-weight: 600; 
+}
+
+/* Animaciones */
+.animate-fade { animation: fadeInUp 0.8s ease forwards; }
+@keyframes fadeInUp { 
+    from { opacity: 0; transform: translateY(20px); } 
+    to { opacity: 1; transform: translateY(0); } 
+}
+
+footer { text-align: center; padding: 40px; color: var(--text-dim); font-size: 0.8rem; }
+
+@media (max-width: 600px) { .interactive-grid { grid-template-columns: 1fr; } }

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad II - Redes del Computador</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-content">
+            <h1>Redes del Computador</h1>
+            <p class="subtitle">Ingeniería en Sistemas | UNEFA</p>
+            <span class="badge">Actividad II - Corte I</span>
+        </div>
+    </header>
+
+    <main class="container">
+        
+        <section class="card animate-fade">
+            <h2 class="section-title">Protocolos de Red</h2>
+            <div class="definition-box">
+                <strong>Definición:</strong> Es un sistema de reglas que permiten que dos o más entidades de un sistema de comunicación se comuniquen entre sí para transmitir información por medio de cualquier tipo de variación de una magnitud física.
+            </div>
+            
+            <h3 class="sub-label">Tipos de Protocolo</h3>
+            <div class="interactive-grid">
+                <div class="info-card">
+                    <div class="card-header"><h3>Comunicaciones de Red</h3></div>
+                    <div class="card-content">
+                        <p>Son los protocolos fundamentales para el intercambio de datos. Incluyen protocolos de nivel de red (IP), de transporte (TCP/UDP) y de aplicación (HTTP/FTP).</p>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="card-header"><h3>Seguridad de Red</h3></div>
+                    <div class="card-content">
+                        <p>Implementan procesos de cifrado y autenticación para garantizar que solo usuarios autorizados accedan a la data. Ejemplos: HTTPS, SSL, TLS y SSH.</p>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="card-header"><h3>Enrutamiento</h3></div>
+                    <div class="card-content">
+                        <p>Permiten a los routers comunicarse entre sí para compartir información sobre la topología de la red y elegir la mejor ruta (OSPF, BGP, RIP).</p>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="card-header"><h3>Descubrimiento de Servicios</h3></div>
+                    <div class="card-content">
+                        <p>Protocolos diseñados para la detección automática de dispositivos y servicios en la red sin configuración manual, como DHCP y DNS.</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="sub-label" style="margin-top: 30px;">Funciones de Protocolo</h3>
+            <div class="interactive-grid">
+                <div class="info-card">
+                    <div class="card-header"><h3>Direccionamiento</h3></div>
+                    <div class="card-content">
+                        <p>Asignación de identificadores únicos (como direcciones IP) para asegurar que los datos lleguen al destino correcto en una red compleja.</p>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="card-header"><h3>Fiabilidad y Control</h3></div>
+                    <div class="card-content">
+                        <p>La <strong>Fiabilidad</strong> garantiza la entrega sin errores, mientras que el <strong>Control de flujo</strong> evita que el emisor sature al receptor.</p>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="card-header"><h3>Secuencia y Errores</h3></div>
+                    <div class="card-content">
+                        <p>La <strong>Secuencia</strong> ordena los paquetes recibidos. La <strong>Detección de errores</strong> descarta paquetes dañados mediante sumas de verificación.</p>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="card-header"><h3>Interfaz de Aplicación</h3></div>
+                    <div class="card-content">
+                        <p>Es el punto de unión entre el protocolo y el software del usuario, permitiendo que las aplicaciones utilicen los servicios de la red.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="card animate-fade delay-1">
+            <h2 class="section-title">Modelo OSI</h2>
+            <div class="definition-box">
+                <strong>Definición:</strong> Modelo de referencia para los protocolos de la red de arquitectura en capas, creado por la ISO en 1984 para permitir la interconectividad mundial.
+            </div>
+            
+            <div class="osi-stack">
+                <div class="layer level-7">
+                    <div class="layer-title"><span>7</span> Capa de Aplicación</div>
+                    <div class="layer-detail">Suministra servicios de red a las aplicaciones del usuario final.</div>
+                </div>
+                <div class="layer level-6">
+                    <div class="layer-title"><span>6</span> Capa de Presentación</div>
+                    <div class="layer-detail">Traducción de formatos, cifrado y compresión de datos.</div>
+                </div>
+                <div class="layer level-5">
+                    <div class="layer-title"><span>5</span> Capa de Sesión</div>
+                    <div class="layer-detail">Establece, gestiona y finaliza las conexiones entre usuarios.</div>
+                </div>
+                <div class="layer level-4">
+                    <div class="layer-title"><span>4</span> Capa de Transporte</div>
+                    <div class="layer-detail">Transferencia de datos confiable y control de errores extremo a extremo.</div>
+                </div>
+                <div class="layer level-3">
+                    <div class="layer-title"><span>3</span> Capa de Red</div>
+                    <div class="layer-detail">Enrutamiento de paquetes y direccionamiento lógico IP.</div>
+                </div>
+                <div class="layer level-2">
+                    <div class="layer-title"><span>2</span> Capa de Enlace de Datos</div>
+                    <div class="layer-detail">Direccionamiento físico MAC y acceso confiable al medio.</div>
+                </div>
+                <div class="layer level-1">
+                    <div class="layer-title"><span>1</span> Capa Física</div>
+                    <div class="layer-detail">Transmisión de bits a través de medios físicos (cables/ondas).</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Desarrollado para Redes del Computador - 2026</p>
+    </footer>
+
+</body>
+</html>
